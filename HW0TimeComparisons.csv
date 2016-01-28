@@ -1,0 +1,9 @@
+n, 1, 10, 100, 1k, 10k, 100k, 1m, 10m, 100m 
+addDict,51,
+remDict,57,
+addFrontList,105883,
+addMidList,51321,
+addEndList,43,
+remFrontList,37,
+remMidList,40,
+remEndList,39,

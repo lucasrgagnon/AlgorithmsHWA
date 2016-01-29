@@ -5,7 +5,7 @@ import java.io.IOException;
  * Created by lucasgagnon on 1/27/16.
  */
 public class TimeTest {
-    private static int HOW_HIGH = 1;
+    private static int HOW_HIGH = 7;
     private static int[] N_Values = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000};
 
     public static void main(String[] args) throws IOException {
@@ -22,13 +22,14 @@ public class TimeTest {
         for (int count = 0; count < HOW_HIGH; count++) {
             int n = N_Values[count];
             if (count < HOW_HIGH) {
-                addDict[count] = TimeMapOps.timeAdd(n);
-                remDict[count] = TimeMapOps.timeRemove(n);
-                addFrontList[count] = TimeListOps.timeAddFront(n);
-                addMidList[count] = TimeListOps.timeAddMid(n);
-                addEndList[count] = TimeListOps.timeAddEnd(n);
-                remFrontList[count] = TimeListOps.timeRemoveFront(n);
-                remMidList[count] = TimeListOps.timeRemoveMid(n);
+                addDict[count] = TimeMapOps.timeAdd(n) / n;
+                remDict[count] = TimeMapOps.timeRemove(n) / n;
+                addFrontList[count] = TimeListOps.timeAddFront(n) / n;
+                addMidList[count] = TimeListOps.timeAddMid(n) / n;
+                addEndList[count] = TimeListOps.timeAddEnd(n) / n;
+                remFrontList[count] = TimeListOps.timeRemoveFront(n) / n;
+                remMidList[count] = TimeListOps.timeRemoveMid(n) / n;
+                remEndList[count] = TimeListOps.timeRemoveEnd(n) / n;
             }
         }
 
@@ -37,11 +38,11 @@ public class TimeTest {
 
         FileWriter writer = new FileWriter("HW0TimeComparisons.csv");
         writer.append("n, 1, 10, 100, 1k, 10k, 100k, 1m, 10m, 100m \n");
-        for (int i = 0; i < HOW_HIGH; i++) {
+        for (int i = 0; i < 8; i++) {
             writer.append(nameArray[i]);
             writer.append(",");
             for (long time : dataArray[i]) {
-                writer.append((char) time);
+                writer.append(Long.toString(time));
                 writer.append(",");
             }
             writer.append("\n");

@@ -6,50 +6,49 @@ import java.util.List;
  */
 public class TimeListOps {
 
+    static int maxReps = 10;
+
     public static long timeAddFront(int n) {
         List<Integer> testList = new ArrayList<>();
-        int maxReps = Math.min((int) (Math.pow(10, 9) / n), 1000000);
         long timeSum = 0;
 
         for (int reps = 0; reps < maxReps; reps++) {
-            long startTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
             for (int i =0; i < n; i++) {
                 testList.add(0, i);
             }
-            long endTime = System.currentTimeMillis();
-            timeSum += startTime - endTime;
+            long endTime = System.nanoTime();
+            timeSum += endTime - startTime;
         }
         return(timeSum / maxReps);
     }
 
     public static long timeAddMid(int n) {
         List<Integer> testList = new ArrayList<>();
-        int maxReps = Math.min((int) (Math.pow(10, 9) / n), 1000000);
         long timeSum = 0;
 
         for (int reps = 0; reps < maxReps; reps++) {
-            long startTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
             for (int i =0; i < n; i++) {
                 testList.add(testList.size() / 2, i);
             }
-            long endTime = System.currentTimeMillis();
-            timeSum += startTime - endTime;
+            long endTime = System.nanoTime();
+            timeSum += endTime - startTime;
         }
         return(timeSum / maxReps);
     }
 
     public static long timeAddEnd(int n) {
         List<Integer> testList = new ArrayList<>();
-        int maxReps = Math.min((int) (Math.pow(10, 9) / n), 1000000);
         long timeSum = 0;
 
         for (int reps = 0; reps < maxReps; reps++) {
-            long startTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
             for (int i =0; i < n; i++) {
                 testList.add(i);
             }
-            long endTime = System.currentTimeMillis();
-            timeSum += startTime - endTime;
+            long endTime = System.nanoTime();
+            timeSum += endTime - startTime;
         }
         return(timeSum / maxReps);
     }
@@ -60,17 +59,16 @@ public class TimeListOps {
         for (int i = 0; i < n; i++){
             testList.add(i);
         }
-        int maxReps = (int) (Math.pow(10, 9) / n);
         long timeSum = 0;
 
         for (int reps = 0; reps < maxReps; reps++) {
             ArrayList<Integer> tempTestList = (ArrayList<Integer>) testList.clone();
-            long startTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
             for (int i = 0; i < n; i++) {
                 tempTestList.remove(0);
             }
-            long endTime = System.currentTimeMillis();
-            timeSum += startTime - endTime;
+            long endTime = System.nanoTime();
+            timeSum += endTime - startTime;
         }
         return(timeSum / maxReps);
     }
@@ -80,17 +78,16 @@ public class TimeListOps {
         for (int i = 0; i < n; i++){
             testList.add(i);
         }
-        int maxReps = Math.min((int) (Math.pow(10, 9) / n), 1000000);
         long timeSum = 0;
 
         for (int reps = 0; reps < maxReps; reps++) {
             ArrayList<Integer> tempTestList = (ArrayList<Integer>) testList.clone();
-            long startTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
             for (int i = 0; i < n; i++) {
                 tempTestList.remove(tempTestList.size() / 2);
             }
-            long endTime = System.currentTimeMillis();
-            timeSum += startTime - endTime;
+            long endTime = System.nanoTime();
+            timeSum += endTime - startTime;
         }
         return(timeSum / maxReps);
     }
@@ -100,17 +97,16 @@ public class TimeListOps {
         for (int i = 0; i < n; i++){
             testList.add(i);
         }
-        int maxReps = Math.min((int) (Math.pow(10, 9) / n), 1000000);
         long timeSum = 0;
 
         for (int reps = 0; reps < maxReps; reps++) {
             ArrayList<Integer> tempTestList = (ArrayList<Integer>) testList.clone();
-            long startTime = System.currentTimeMillis();
+            long startTime = System.nanoTime();
             for (int i = 0; i < n; i++) {
-                tempTestList.remove(tempTestList.size());
+                tempTestList.remove(tempTestList.size()-1);
             }
-            long endTime = System.currentTimeMillis();
-            timeSum += startTime - endTime;
+            long endTime = System.nanoTime();
+            timeSum += endTime - startTime;
         }
         return(timeSum / maxReps);
     }

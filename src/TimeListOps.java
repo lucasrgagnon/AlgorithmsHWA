@@ -20,6 +20,7 @@ public class TimeListOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed list add to front " + n + ".");
         return(timeSum / maxReps);
     }
 
@@ -35,6 +36,7 @@ public class TimeListOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed list add to middle " + n + ".");
         return(timeSum / maxReps);
     }
 
@@ -50,6 +52,7 @@ public class TimeListOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed list add to end " + n + ".");
         return(timeSum / maxReps);
     }
 
@@ -70,6 +73,7 @@ public class TimeListOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed list remove from front " + n + ".");
         return(timeSum / maxReps);
     }
 
@@ -89,6 +93,7 @@ public class TimeListOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed list remove from middle " + n + ".");
         return(timeSum / maxReps);
     }
 
@@ -108,6 +113,7 @@ public class TimeListOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed list remove from end " + n + ".");
         return(timeSum / maxReps);
     }
 }

@@ -19,6 +19,7 @@ public class TimeMapOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed map add " + n + ".");
         return(timeSum / maxReps);
     }
 
@@ -39,6 +40,7 @@ public class TimeMapOps {
             long endTime = System.nanoTime();
             timeSum += endTime - startTime;
         }
+        System.out.println("Completed map remove " + n + ".");
         return(timeSum / maxReps);
     }
 

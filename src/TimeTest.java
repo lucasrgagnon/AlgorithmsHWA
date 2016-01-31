@@ -5,7 +5,7 @@ import java.io.IOException;
  * Created by lucasgagnon on 1/27/16.
  */
 public class TimeTest {
-    private static int HOW_HIGH = 7;
+    private static int HOW_HIGH = 9;
     private static int[] N_Values = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000};
 
     public static void main(String[] args) throws IOException {
@@ -31,24 +31,23 @@ public class TimeTest {
                 remMidList[count] = TimeListOps.timeRemoveMid(n) / n;
                 remEndList[count] = TimeListOps.timeRemoveEnd(n) / n;
             }
-        }
+            long[][] dataArray = {addDict, remDict, addFrontList, addMidList, addEndList, remFrontList, remMidList, remEndList};
+            String[] nameArray = {"addDict", "remDict", "addFrontList", "addMidList", "addEndList", "remFrontList", "remMidList", "remEndList"};
 
-        long[][] dataArray = {addDict, remDict, addFrontList, addMidList, addEndList, remFrontList, remMidList, remEndList};
-        String[] nameArray = {"addDict", "remDict", "addFrontList", "addMidList", "addEndList", "remFrontList", "remMidList", "remEndList"};
-
-        FileWriter writer = new FileWriter("HW0TimeComparisons.csv");
-        writer.append("n, 1, 10, 100, 1k, 10k, 100k, 1m, 10m, 100m \n");
-        for (int i = 0; i < 8; i++) {
-            writer.append(nameArray[i]);
-            writer.append(",");
-            for (long time : dataArray[i]) {
-                writer.append(Long.toString(time));
+            FileWriter writer = new FileWriter("HW0TimeComparisons.csv");
+            writer.append("n, 1, 10, 100, 1k, 10k, 100k, 1m, 10m, 100m \n");
+            for (int i = 0; i < 8; i++) {
+                writer.append(nameArray[i]);
                 writer.append(",");
+                for (long time : dataArray[i]) {
+                    writer.append(Long.toString(time));
+                    writer.append(",");
+                }
+                writer.append("\n");
             }
-            writer.append("\n");
-        }
 
-        writer.close();
+            writer.close();
+        }
     }
 
 }

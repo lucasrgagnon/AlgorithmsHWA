@@ -34,7 +34,7 @@ public class TimeTest {
             long[][] dataArray = {addDict, remDict, addFrontList, addMidList, addEndList, remFrontList, remMidList, remEndList};
             String[] nameArray = {"addDict", "remDict", "addFrontList", "addMidList", "addEndList", "remFrontList", "remMidList", "remEndList"};
 
-            FileWriter writer = new FileWriter("HW0TimeComparisons.csv");
+            FileWriter writer = new FileWriter("HWATimeComparisons.csv");
             writer.append("n, 1, 10, 100, 1k, 10k, 100k, 1m, 10m, 100m \n");
             for (int i = 0; i < 8; i++) {
                 writer.append(nameArray[i]);
